@@ -1,0 +1,20 @@
+(venv) D:\mai_mag>python rabitmq_ctl.py "myqueue" "send" "message1"
+Sending message for queue myqueue message1
+
+(venv) D:\mai_mag>python rabitmq_ctl.py "myqueue" "send" "message2"
+Sending message for queue myqueue message2
+
+(venv) D:\mai_mag>python rabitmq_ctl.py "myqueue" "send" "message3"
+Sending message for queue myqueue message3
+
+(venv) D:\mai_mag>timeout /t 5 /nobreak
+
+Время ожидания 0 сек., нажмите CTRL+C для выхода ...
+
+(venv) D:\mai_mag>python rabitmq_ctl.py "myqueue" "recv" "3"
+Received message on:  <BlockingChannel impl=<Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002B0E69B0F40> params=<ConnectionParameters host
+=localhost port=5672 virtual_host=/ ssl=False>>>> Body: b'message1'
+Received message on:  <BlockingChannel impl=<Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002B0E69B0F40> params=<ConnectionParameters host
+=localhost port=5672 virtual_host=/ ssl=False>>>> Body: b'message2'
+Received message on:  <BlockingChannel impl=<Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x000002B0E69B0F40> params=<ConnectionParameters host
+=localhost port=5672 virtual_host=/ ssl=False>>>> Body: b'message3'
